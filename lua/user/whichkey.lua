@@ -106,15 +106,7 @@ local mappings = {
         t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
         r = { "<cmd>lua require('telescope.builtin').lsp_references(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find references"}
     },
-    p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
-    },
-
+    
     g = {
         name = "Git",
         g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
@@ -150,13 +142,13 @@ local mappings = {
     },
     l = {
         name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
         d = {
             "<cmd>Telescope diagnostics bufnr=0<cr>",
             "Document Diagnostics",
         },
         w = {
-            "<cmd>Telescope diagnostics<cr>",
+            "<cmd>Lspsaga show_workspace_diagnostics<cr>",
             "Workspace Diagnostics",
         },
         f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
@@ -178,7 +170,19 @@ local mappings = {
             "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
             "Workspace Symbols",
         },
+        o = {"<cmd>Lspsaga outline<CR>", "Show outline"}, 
+        r = {"<cmd>Lspsaga rename<CR>", "Rename variable"},
+        R = {"<cmd>Lspsaga rename ++project<cr>", "Rename variable across project"}
+        
     },
+    d = {
+        name = "Diagnsotics",
+        l = {"<cmd>Lspsaga show_line_diagnostics<cr>", "Show line diagnostics"},
+        b = {"<cmd>Lspsaga show_buffer_diagnostics<cr>", "Show buffer diagnostics"},
+        w = {"<cmd>Lspsaga show_workspace_diagnostics<cr>", "Show line diagnostics"},
+        c = {"<cmd>Lspsaga show_cursor_diagnostics<cr>", "Show cursor diagnostics"},
+
+  },
     s = {
         name = "Search",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },

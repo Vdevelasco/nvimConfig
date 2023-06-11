@@ -44,6 +44,28 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
+--LSP
+keymap("n", "<C-ñ>", "Lspsaga term_toggle", opts)
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
+  keymap("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", opts)
+  keymap("n", "<leader>la", "<cmd>Lspsaga code_action<cr>", opts)
+  keymap("n", "<leader>lj", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
+  keymap("n", "<leader>lk", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
+  --keymap("n", "<leader>lJ", function()
+  --require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+--end, opts)
+ --keymap("n", "<leader>lK", function()
+  --require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+--end, opts)
+  keymap("n", "<leader>lr", "<cmd>Lspsaga rename<cr>", opts)
+  keymap("n", "<leader>lR", "<cmd>Lspsaga rename ++project<cr>", opts)
+  keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+  keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", opts)
+  keymap("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>", opts)
+  keymap("n", "gT", "<cmd>Lspsaga goto_type_definition<CR>", opts)
+  keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
