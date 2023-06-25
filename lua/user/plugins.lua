@@ -529,4 +529,7 @@ require("lazy").setup({
   {
     'folke/trouble.nvim',
   },
+  {
+    'zubairakram/nvim-emmet',
+  },
 })
