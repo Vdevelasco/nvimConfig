@@ -1,1 +1,1 @@
-
+This is an edition of another nvim configuration that I found on github, sadly I had to delete the github folder and can't find it anymore so please if you know who's work is let me know and I'll publish their link properly
