@@ -227,8 +227,9 @@ local mappings = {
 
     q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix"},
 
-    g = { "<cmd>TroubleToggle lsp_references<cr>", "Lsp References"}
+    g = { "<cmd>TroubleToggle lsp_references<cr>", "Lsp References"},
 
+    t = { "<cmd>ToggleDiag<cr>", "Toggle Diagnostics"}
   },
 
   m = {

@@ -35,8 +35,8 @@ vim.api.nvim_set_keymap("n", "<S-l>", ":bnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-vim.api.nvim_set_keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-vim.api.nvim_set_keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+vim.api.nvim_set_keymap("n", "<A-j>", "<Esc>:m .+1<CR>==g", opts)
+vim.api.nvim_set_keymap("n", "<A-k>", "<Esc>:m .-2<CR>==g", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode 
@@ -79,8 +79,8 @@ vim.api.nvim_set_keymap("v", "p", '"_dP', opts)
 -- Move text up and down
 vim.api.nvim_set_keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 vim.api.nvim_set_keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-vim.api.nvim_set_keymap("x", "<A-j>", ":move '>+1<CR>gv-gv<Esc>", opts)
 vim.api.nvim_set_keymap("x", "<A-k>", ":move '<-2<CR>gv-gv<Esc>", opts)
+vim.api.nvim_set_keymap("x", "<A-j>", ":move '>+1<CR>gv-gv<Esc>", opts)
 
 -- Terminal --
 -- Better terminal navigation

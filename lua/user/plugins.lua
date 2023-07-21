@@ -74,6 +74,10 @@ require("lazy").setup({
 { "williamboman/mason-lspconfig.nvim" },
 { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
 { "RRethy/vim-illuminate" },
+{'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
+  config = function ()
+    require('toggle_lsp_diagnostics').init()
+  end},
 
 -- Telescope
 { "nvim-telescope/telescope.nvim" },
