@@ -535,11 +535,6 @@ require("lazy").setup({
     'zubairakram/nvim-emmet',
   },
   {
-    "m4xshen/hardtime.nvim",
-    event = "VeryLazy",
-    opts = {}
-  },
-  {
   "L3MON4D3/LuaSnip",
   dependencies = { "rafamadriz/friendly-snippets" },
 },

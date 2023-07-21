@@ -44,7 +44,7 @@ vim.api.nvim_set_keymap("i", "jk", "<ESC>", opts)
 vim.api.nvim_set_keymap("i", "kj", "<ESC>", opts)
 
 --LSP
-vim.api.nvim_set_keymap("n", "<C-ñ>", "Lspsaga term_toggle", opts)
+vim.api.nvim_set_keymap("n", "<C-'>", "Lspsaga term_toggle", opts)
 vim.api.nvim_set_keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
   vim.api.nvim_set_keymap("n", "<leader>lo", "<cmd>Lspsaga outline<CR>", opts)
   vim.api.nvim_set_keymap("n", "<leader>la", "<cmd>Lspsaga code_action<cr>", opts)
@@ -89,13 +89,33 @@ vim.api.nvim_set_keymap("x", "<A-k>", ":move '<-2<CR>gv-gv<Esc>", opts)
 -- vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- vim.api.nvim_set_keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-
+--
 vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-N>", function() ls.jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-P>", function() ls.jump(-1) end, {silent = true})
 
 vim.keymap.set({"i", "s"}, "<C-E>", function()
 	if ls.choice_active() then
 		ls.change_choice(1)
 	end
 end, {silent = true})
+
+-- Lua
+vim.keymap.set("n", "<leader>rx", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>rw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>rd", "<cmd>TroubleToggle document_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>rl", "<cmd>TroubleToggle loclist<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>rq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
+  {silent = true, noremap = true}
+)

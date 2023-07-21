@@ -9,6 +9,7 @@ local servers = {
 	-- "yamlls",
   "tailwindcss",
   "tsserver",
+  "rust_analyzer",
 }
 
 local settings = {
