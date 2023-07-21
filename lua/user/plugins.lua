@@ -66,6 +66,8 @@ require("lazy").setup({
 { "L3MON4D3/LuaSnip" }, --snippet engine
 { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to ,
 
+
+
 -- LSP
 { "neovim/nvim-lspconfig" }, -- enable LSP
 { "williamboman/mason.nvim" }, -- simple to l,anguage server installer
@@ -532,4 +534,14 @@ require("lazy").setup({
   {
     'zubairakram/nvim-emmet',
   },
+  {
+    "m4xshen/hardtime.nvim",
+    event = "VeryLazy",
+    opts = {}
+  },
+  {
+  "L3MON4D3/LuaSnip",
+  dependencies = { "rafamadriz/friendly-snippets" },
+},
+  { "rafamadriz/friendly-snippets" }
 })
